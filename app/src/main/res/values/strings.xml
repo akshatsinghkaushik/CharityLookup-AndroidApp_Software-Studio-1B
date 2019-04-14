@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">CharityLookup</string>
+
+    <string name="donor_registration_title">Donor Registration</string>
+    <string name="charity_registration_title">Charity Registration</string>
+    <string name="registration_first_name">First Name</string>
+    <string name="registration_last_name">Last Name</string>
+    <string name="registration_email">Email</string>
+    <string name="registration_password">Password</string>
+    <string name="registration_phone_number">Phone Number</string>
+
+    <string name="registration_charity_name">Charity Name</string>
+    <string name="registration_other_name">Other Name (Optional)</string>
+    <string name="registration_charity_abn">ABN (Optional)</string>
+    <string name="registration_charity_website">Website</string>
+    <string name="registration_charity_date_established">Date Established</string>
+    <string name="registration_charity_purpose">Purpose/Who The Charity Benefits</string>
+
+    <string name="register_button">Register</string>
+
 </resources>
