@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -53,6 +54,9 @@ public class Registration extends AppCompatActivity {
     }
 
     public void RegistrationButtonOnClick(View v){
+        Toast.makeText(getApplicationContext(),"you've Registered!", Toast.LENGTH_SHORT).show();
+
+
         //Inputting data into Firebase
 
         //Writing message to database
@@ -61,6 +65,7 @@ public class Registration extends AppCompatActivity {
 
 
         UserInformation userInformation = new UserInformation (String.valueOf(textEmail.getText()),String.valueOf(textName.getText()), String.valueOf(textPassword.getText()));
+        registrationTitle.setText(userInformation.getName());
         DatabaseReference mRef = database.getReference().child("Donors").child("JohnDoe");
         mRef.setValue(userInformation);
 
