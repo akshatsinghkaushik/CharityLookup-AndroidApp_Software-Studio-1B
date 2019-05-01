@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -55,12 +56,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickLogin (View v){
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference ref = database.getReference();
+        Toast.makeText(getApplicationContext(),"Logging in", Toast.LENGTH_SHORT).show();
+
         ValueEventListener postListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 //showData(DataSnapshot dataSnapshot);
-                String value = dataSnapshot.getValue(String.class);
-                Log.d("me", "Value is: " + value);
+                UserInformation userinformation = dataSnapshot.getValue(UserInformation.class);
+                Log.d("AAAAAAAAAAAAAAA", userinformation.toString());
             }
 
             @Override
