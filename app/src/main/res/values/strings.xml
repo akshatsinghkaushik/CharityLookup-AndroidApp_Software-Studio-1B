@@ -14,5 +14,20 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-    <string name="title_activity_registration">Registration</string>
+
+    <string name="title_donor_registration">Donor Registration</string>
+    <string name="registration_first_name">First Name</string>
+    <string name="registration_last_name">Last Name</string>
+    <string name="registration_email">Email</string>
+    <string name="registration_password">Password</string>
+    <string name="registration_phone_number">Phone No</string>
+    <string name="register_button">Register</string>
+
+    <string name="title_charity_registration">Charity Registration</string>
+    <string name="registration_charity_name">Charity Name</string>
+    <string name="registration_other_name">Other Name (if any)</string>
+    <string name="registration_charity_abn">ABN</string>
+    <string name="registration_charity_website">Charity Website</string>
+    <string name="registration_charity_date_est">Date Est</string>
+    <string name="registration_charity_purpose">Charity Purpose/Description</string>
 </resources>
