@@ -66,7 +66,8 @@ public class Registration extends AppCompatActivity {
 
         UserInformation userInformation = new UserInformation (String.valueOf(textEmail.getText()),String.valueOf(textName.getText()), String.valueOf(textPassword.getText()));
         registrationTitle.setText(userInformation.getName());
-        DatabaseReference mRef = database.getReference().child("Donors").child("JohnDoe");
+        DatabaseReference mRef = database.getReference().child("Donors").child(String.valueOf(textUsername.getText()));
+        //mRef = ref.child("Donors");
         mRef.setValue(userInformation);
 
     }
