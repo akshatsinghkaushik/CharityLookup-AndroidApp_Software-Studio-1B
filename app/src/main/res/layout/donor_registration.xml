@@ -1,95 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/RelativeLayout"
+    android:id="@+id/ScrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/charityRegistPhoneNo"
-        android:layout_width="310dp"
-        android:layout_height="55dp"
-        android:layout_below="@+id/charityRegistEmail"
-        android:layout_alignParentLeft="false"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:ems="10"
-        android:gravity="center_horizontal"
-        android:hint="@string/registration_phone_number"
-        android:inputType="phone" />
+    <RelativeLayout
+        android:id="@+id/RelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadeScrollbars="false"
+        android:fillViewport="true"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/charityRegistEmail"
-        android:layout_width="310dp"
-        android:layout_height="55dp"
-        android:layout_below="@+id/charityRegistABN"
-        android:layout_alignParentLeft="false"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:ems="10"
-        android:gravity="center_horizontal"
-        android:hint="@string/registration_password"
-        android:inputType="textPassword|numberPassword" />
+        <EditText
+            android:id="@+id/donorRegistPhoneNo"
+            android:layout_width="310dp"
+            android:layout_height="55dp"
+            android:layout_below="@+id/donorRegistPassword"
+            android:layout_alignParentLeft="false"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:hint="@string/registration_phone_number"
+            android:inputType="phone" />
 
-    <EditText
-        android:id="@+id/charityRegistABN"
-        android:layout_width="310dp"
-        android:layout_height="55dp"
-        android:layout_below="@+id/charityRegistOtherName"
-        android:layout_alignParentLeft="false"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:ems="10"
-        android:gravity="center_horizontal"
-        android:hint="@string/registration_email"
-        android:inputType="textWebEmailAddress|textEmailAddress" />
+        <EditText
+            android:id="@+id/donorRegistPassword"
+            android:layout_width="310dp"
+            android:layout_height="55dp"
+            android:layout_below="@+id/donorRegistEmail"
+            android:layout_alignParentLeft="false"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:hint="@string/registration_password"
+            android:inputType="textPassword|numberPassword" />
 
-    <EditText
-        android:id="@+id/charityRegistOtherName"
-        android:layout_width="310dp"
-        android:layout_height="55dp"
-        android:layout_below="@+id/charityRegistName"
-        android:layout_alignParentLeft="false"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:ems="10"
-        android:gravity="center_horizontal"
-        android:hint="@string/registration_last_name"
-        android:inputType="textPersonName" />
+        <EditText
+            android:id="@+id/donorRegistEmail"
+            android:layout_width="310dp"
+            android:layout_height="55dp"
+            android:layout_below="@+id/donorRegistLastName"
+            android:layout_alignParentLeft="false"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:hint="@string/registration_email"
+            android:inputType="textWebEmailAddress|textEmailAddress" />
 
-    <EditText
-        android:id="@+id/donorRegTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:elegantTextHeight="false"
-        android:ems="10"
-        android:gravity="center"
-        android:importantForAutofill="no"
-        android:inputType="none"
-        android:text="@string/donor_registration_title" />
+        <EditText
+            android:id="@+id/donorRegistLastName"
+            android:layout_width="310dp"
+            android:layout_height="55dp"
+            android:layout_below="@+id/donorRegistFirstName"
+            android:layout_alignParentLeft="false"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:hint="@string/registration_last_name"
+            android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/charityRegistName"
-        android:layout_width="310dp"
-        android:layout_height="55dp"
-        android:layout_below="@+id/donorRegTitle"
-        android:layout_alignParentLeft="false"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:ems="10"
-        android:gravity="center_horizontal"
-        android:hint="@string/registration_first_name"
-        android:inputType="textPersonName" />
+        <EditText
+            android:id="@+id/donorRegTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:elegantTextHeight="false"
+            android:ems="10"
+            android:gravity="center"
+            android:importantForAutofill="no"
+            android:inputType="none"
+            android:text="@string/title_donor_registration" />
 
-    <Button
-        android:id="@+id/register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/charityRegistPhoneNo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="65dp"
-        android:text="@string/register_button" />
+        <EditText
+            android:id="@+id/donorRegistFirstName"
+            android:layout_width="310dp"
+            android:layout_height="55dp"
+            android:layout_below="@+id/donorRegistUsername"
+            android:layout_alignParentLeft="false"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:hint="@string/registration_first_name"
+            android:inputType="textPersonName" />
 
-</RelativeLayout>
+        <EditText
+            android:id="@+id/donorRegistUsername"
+            android:layout_width="310dp"
+            android:layout_height="55dp"
+            android:layout_below="@+id/donorRegTitle"
+            android:layout_alignParentLeft="false"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:hint="@string/registration_username"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/donorRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/donorRegistPhoneNo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="65dp"
+            android:onClick="registerAction"
+            android:text="@string/register_button" />
+
+    </RelativeLayout>
+</ScrollView>

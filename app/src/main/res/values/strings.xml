@@ -1,21 +1,36 @@
 <resources>
     <string name="app_name">CharityLookup</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="title_activity_registration">Register</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
 
-    <string name="donor_registration_title">Donor Registration</string>
-    <string name="charity_registration_title">Charity Registration</string>
+    <!-- Strings related to registration -->
+    <string name="title_donor_registration">Donor Registration</string>
+    <string name="registration_username">Username</string>
     <string name="registration_first_name">First Name</string>
     <string name="registration_last_name">Last Name</string>
     <string name="registration_email">Email</string>
     <string name="registration_password">Password</string>
-    <string name="registration_phone_number">Phone Number</string>
-
-    <string name="registration_charity_name">Charity Name</string>
-    <string name="registration_other_name">Other Name (Optional)</string>
-    <string name="registration_charity_abn">ABN (Optional)</string>
-    <string name="registration_charity_website">Website</string>
-    <string name="registration_charity_date_established">Date Established</string>
-    <string name="registration_charity_purpose">Purpose/Who The Charity Benefits</string>
-
+    <string name="registration_phone_number">Phone No</string>
     <string name="register_button">Register</string>
 
+    <string name="title_charity_registration">Charity Registration</string>
+    <string name="registration_charity_name">Charity Name</string>
+    <string name="registration_other_name">Other Name (if any)</string>
+    <string name="registration_charity_abn">ABN</string>
+    <string name="registration_charity_website">Charity Website</string>
+    <string name="registration_charity_date_est">Date Est</string>
+    <string name="registration_charity_purpose">Charity Purpose/Description</string>
 </resources>
