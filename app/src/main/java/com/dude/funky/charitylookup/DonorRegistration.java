@@ -36,7 +36,7 @@ public class DonorRegistration extends AppCompatActivity {
         phoneNo = findViewById(R.id.donorRegistPhoneNo);
     }
 
-    public void registerAction(View v) {
+    public void donorRegisterAction(View v) {
         //Getting Firebase instance
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 

@@ -11,10 +11,11 @@
         android:id="@+id/RelativeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:onClick="charityRegisterAction"
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/charityDateEst2"
+            android:id="@+id/charityRegistPurpose"
             android:layout_width="310dp"
             android:layout_height="100dp"
             android:layout_below="@+id/charityDateEst"
@@ -133,7 +134,7 @@
             android:id="@+id/registerBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/charityDateEst2"
+            android:layout_below="@+id/charityRegistPurpose"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
             android:text="@string/register_button" />

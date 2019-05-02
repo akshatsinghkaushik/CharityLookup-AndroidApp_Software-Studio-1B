@@ -13,12 +13,14 @@ import com.google.firebase.database.FirebaseDatabase;
 public class CharityRegistration extends AppCompatActivity {
 
     //Initialising widgets
-    TextView username;
-    TextView firstName;
-    TextView lastName;
+    TextView charityName;
+    TextView otherName;
+    TextView ABN;
     TextView email;
-    TextView password;
     TextView phoneNo;
+    TextView charityWebsite;
+    TextView dateEst;
+    TextView charityPurpose;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,25 +30,28 @@ public class CharityRegistration extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         //Linking instances to widgets
-        username = findViewById(R.id.donorRegistUsername);
-        firstName = findViewById(R.id.donorRegistFirstName);
-        lastName = findViewById(R.id.donorRegistLastName);
-        email = findViewById(R.id.donorRegistEmail);
-        password = findViewById(R.id.donorRegistPassword);
-        phoneNo = findViewById(R.id.donorRegistPhoneNo);
+        charityName = findViewById(R.id.charityRegistName);
+        otherName = findViewById(R.id.charityRegistOtherName);
+        ABN = findViewById(R.id.charityRegistABN);
+        email = findViewById(R.id.charityRegistEmail);
+        phoneNo = findViewById(R.id.charityRegistPhoneNo);
+        charityWebsite = findViewById(R.id.charityRegistWebsite);
+        dateEst = findViewById(R.id.charityDateEst);
+        charityPurpose = findViewById(R.id.charityRegistPurpose);
     }
 
-    public void registerAction(View v) {
+    public void charityRegisterAction(View v) {
         //Getting Firebase instance
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 
-        //Making a new DonorInformation object where the new user's info will be stored
-        DonorInformation userInfo = new DonorInformation(String.valueOf(username.getText()), String.valueOf(firstName.getText()), String.valueOf(lastName.getText()),
-                String.valueOf(email.getText()), String.valueOf(password.getText()), String.valueOf(phoneNo.getText()));
+        //Making a new CharityInformation object where the new charity's info will be stored
+        CharityInformation charityInfo = new CharityInformation(String.valueOf(charityName.getText()), String.valueOf(otherName.getText()),
+                String.valueOf(ABN.getText()), String.valueOf(email.getText()), String.valueOf(phoneNo.getText()),
+                String.valueOf(charityWebsite.getText()), String.valueOf(dateEst.getText()), String.valueOf(charityPurpose.getText()));
 
-        //Uploading the user info to the Firebase database
-        DatabaseReference mRef = database.getReference().child("Donors1").child(String.valueOf(username.getText()));
-        mRef.setValue(userInfo);
+        //Uploading the charity info to the Firebase database
+        DatabaseReference mRef = database.getReference().child("Charities").child(String.valueOf(email.getText()));
+        mRef.setValue(charityInfo);
 
         //Popup telling user that registration has been successful
         Toast.makeText(getApplicationContext(), "Registration successful", Toast.LENGTH_LONG).show();

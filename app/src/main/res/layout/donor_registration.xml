@@ -111,7 +111,7 @@
             android:layout_below="@+id/donorRegistPhoneNo"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="65dp"
-            android:onClick="registerAction"
+            android:onClick="donorRegisterAction"
             android:text="@string/register_button" />
 
     </RelativeLayout>
