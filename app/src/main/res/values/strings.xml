@@ -2,6 +2,7 @@
     <string name="app_name">CharityLookup</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_login">Sign in</string>
+    <string name="title_activity_registration">Register</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
@@ -15,7 +16,9 @@
         completions."
     </string>
 
+    <!-- Strings related to registration -->
     <string name="title_donor_registration">Donor Registration</string>
+    <string name="registration_username">Username</string>
     <string name="registration_first_name">First Name</string>
     <string name="registration_last_name">Last Name</string>
     <string name="registration_email">Email</string>

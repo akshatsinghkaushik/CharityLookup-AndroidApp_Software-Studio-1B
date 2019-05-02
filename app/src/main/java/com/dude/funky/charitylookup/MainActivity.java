@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
     /*private void showData(DataSnapshot dataSnapshot){
         for(DataSnapshot ds : dataSnapshot.getChildren()){
-            UserInformation uInfo = new UserInformation();
+            DonorInformation uInfo = new DonorInformation();
             uInfo.setName(ds.child())
         }
     }*/
