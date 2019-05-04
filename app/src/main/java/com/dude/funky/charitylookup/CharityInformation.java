@@ -4,6 +4,7 @@ public class CharityInformation {
 
     private String charityName;
     private String otherName;
+    private String password;
     private String ABN;
     private String email;
     private String phoneNo;
@@ -11,7 +12,7 @@ public class CharityInformation {
     private String dateEst;
     private String charityPurpose;
 
-    public CharityInformation(String charityName, String otherName, String ABN, String email, String phoneNo,
+    public CharityInformation(String charityName, String otherName, String password, String ABN, String email, String phoneNo,
                               String charityWebsite, String dateEst, String charityPurpose) {
 
         this.charityName = charityName;
@@ -38,6 +39,14 @@ public class CharityInformation {
 
     public void setOtherName(String otherName) {
         this.otherName = otherName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getABN() {

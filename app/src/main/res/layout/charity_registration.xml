@@ -51,7 +51,7 @@
             android:ems="10"
             android:gravity="center_horizontal"
             android:hint="@string/registration_charity_website"
-            android:inputType="text" />
+            android:inputType="textUri" />
 
         <EditText
             android:id="@+id/charityRegistPhoneNo"
@@ -83,7 +83,7 @@
             android:id="@+id/charityRegistABN"
             android:layout_width="310dp"
             android:layout_height="55dp"
-            android:layout_below="@+id/charityRegistOtherName"
+            android:layout_below="@+id/charityRegistPw"
             android:layout_alignParentLeft="false"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
@@ -91,6 +91,19 @@
             android:gravity="center_horizontal"
             android:hint="@string/registration_charity_abn"
             android:inputType="number" />
+
+        <EditText
+            android:id="@+id/charityRegistPw"
+            android:layout_width="310dp"
+            android:layout_height="55dp"
+            android:layout_below="@+id/charityRegistOtherName"
+            android:layout_alignParentLeft="false"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:hint="@string/registration_password"
+            android:inputType="textPassword" />
 
         <EditText
             android:id="@+id/charityRegistOtherName"
@@ -103,13 +116,14 @@
             android:ems="10"
             android:gravity="center_horizontal"
             android:hint="@string/registration_other_name"
-            android:inputType="textPersonName" />
+            android:inputType="textShortMessage" />
 
         <EditText
             android:id="@+id/charityRegTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:editable="false"
             android:elegantTextHeight="false"
             android:ems="10"
             android:gravity="center"
@@ -128,7 +142,7 @@
             android:ems="10"
             android:gravity="center_horizontal"
             android:hint="@string/registration_charity_name"
-            android:inputType="textPersonName" />
+            android:inputType="textShortMessage|text" />
 
         <Button
             android:id="@+id/registerBtn"
@@ -137,6 +151,7 @@
             android:layout_below="@+id/charityRegistPurpose"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
+            android:onClick="charityRegisterAction"
             android:text="@string/register_button" />
 
     </RelativeLayout>

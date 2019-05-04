@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -15,6 +16,7 @@ public class CharityRegistration extends AppCompatActivity {
     //Initialising widgets
     TextView charityName;
     TextView otherName;
+    TextView password;
     TextView ABN;
     TextView email;
     TextView phoneNo;
@@ -32,6 +34,7 @@ public class CharityRegistration extends AppCompatActivity {
         //Linking instances to widgets
         charityName = findViewById(R.id.charityRegistName);
         otherName = findViewById(R.id.charityRegistOtherName);
+        password = findViewById(R.id.charityRegistPw);
         ABN = findViewById(R.id.charityRegistABN);
         email = findViewById(R.id.charityRegistEmail);
         phoneNo = findViewById(R.id.charityRegistPhoneNo);
@@ -46,7 +49,7 @@ public class CharityRegistration extends AppCompatActivity {
 
         //Making a new CharityInformation object where the new charity's info will be stored
         CharityInformation charityInfo = new CharityInformation(String.valueOf(charityName.getText()), String.valueOf(otherName.getText()),
-                String.valueOf(ABN.getText()), String.valueOf(email.getText()), String.valueOf(phoneNo.getText()),
+                String.valueOf(password.getText()), String.valueOf(ABN.getText()), String.valueOf(email.getText()), String.valueOf(phoneNo.getText()),
                 String.valueOf(charityWebsite.getText()), String.valueOf(dateEst.getText()), String.valueOf(charityPurpose.getText()));
 
         //Uploading the charity info to the Firebase database
