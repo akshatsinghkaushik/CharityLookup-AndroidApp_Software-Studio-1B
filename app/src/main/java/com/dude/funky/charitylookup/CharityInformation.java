@@ -17,6 +17,7 @@ public class CharityInformation {
 
         this.charityName = charityName;
         this.otherName = otherName;
+        this.password = password;
         this.ABN = ABN;
         this.email = email;
         this.phoneNo = phoneNo;
