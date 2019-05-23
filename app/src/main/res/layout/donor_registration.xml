@@ -18,7 +18,7 @@
             android:id="@+id/donorRegistPhoneNo"
             android:layout_width="310dp"
             android:layout_height="55dp"
-            android:layout_below="@+id/donorRegistPassword"
+            android:layout_below="@+id/donorConfirmPw"
             android:layout_alignParentLeft="false"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
@@ -41,6 +41,54 @@
             android:inputType="textPassword|numberPassword" />
 
         <EditText
+            android:id="@+id/donorRegistPwWarning"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/donorRegistPassword"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-9dp"
+            android:clickable="false"
+            android:editable="false"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="none"
+            android:text="@string/registration_password_warning"
+            android:textSize="15sp"
+            android:typeface="normal"
+            android:visibility="invisible"
+            tools:visibility="visible" />
+
+        <EditText
+            android:id="@+id/donorConfirmPw"
+            android:layout_width="310dp"
+            android:layout_height="55dp"
+            android:layout_below="@+id/donorRegistPassword"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:hint="@string/registration_confirm_password"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/donorConfirmPwWarning"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/donorConfirmPw"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-9dp"
+            android:clickable="false"
+            android:editable="false"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="none"
+            android:text="@string/registration_confirm_password_warning"
+            android:textSize="15sp"
+            android:typeface="normal"
+            android:visibility="invisible"
+            tools:visibility="visible" />
+
+        <EditText
             android:id="@+id/donorRegistEmail"
             android:layout_width="310dp"
             android:layout_height="55dp"
@@ -52,6 +100,24 @@
             android:gravity="center_horizontal"
             android:hint="@string/registration_email"
             android:inputType="textWebEmailAddress|textEmailAddress" />
+
+        <EditText
+            android:id="@+id/donorRegistEmailWarning"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/donorRegistEmail"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-9dp"
+            android:clickable="false"
+            android:editable="false"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="none"
+            android:text="@string/registration_email_warning"
+            android:textSize="15sp"
+            android:typeface="normal"
+            android:visibility="invisible"
+            tools:visibility="visible" />
 
         <EditText
             android:id="@+id/donorRegistLastName"

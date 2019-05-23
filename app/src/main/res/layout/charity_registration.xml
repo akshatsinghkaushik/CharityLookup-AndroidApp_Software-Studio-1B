@@ -10,7 +10,7 @@
     <RelativeLayout
         android:id="@+id/RelativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:onClick="charityRegisterAction"
         android:orientation="vertical">
 
@@ -19,7 +19,6 @@
             android:layout_width="310dp"
             android:layout_height="100dp"
             android:layout_below="@+id/charityDateEst"
-            android:layout_alignParentLeft="false"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
             android:ems="10"
@@ -45,7 +44,6 @@
             android:layout_width="310dp"
             android:layout_height="55dp"
             android:layout_below="@+id/charityRegistPhoneNo"
-            android:layout_alignParentLeft="false"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
             android:ems="10"
@@ -58,7 +56,6 @@
             android:layout_width="310dp"
             android:layout_height="55dp"
             android:layout_below="@+id/charityRegistEmail"
-            android:layout_alignParentLeft="false"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
             android:ems="10"
@@ -71,7 +68,6 @@
             android:layout_width="310dp"
             android:layout_height="55dp"
             android:layout_below="@+id/charityRegistABN"
-            android:layout_alignParentLeft="false"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
             android:ems="10"
@@ -80,7 +76,7 @@
             android:inputType="textWebEmailAddress|textEmailAddress" />
 
         <EditText
-            android:id="@+id/charityEmailWarning"
+            android:id="@+id/charityRegistEmailWarning"
             android:layout_width="300dp"
             android:layout_height="40dp"
             android:layout_below="@id/charityRegistEmail"
@@ -102,7 +98,6 @@
             android:layout_width="310dp"
             android:layout_height="55dp"
             android:layout_below="@+id/charityConfirmPw"
-            android:layout_alignParentLeft="false"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
             android:ems="10"
@@ -115,7 +110,6 @@
             android:layout_width="310dp"
             android:layout_height="55dp"
             android:layout_below="@+id/charityRegistOtherName"
-            android:layout_alignParentLeft="false"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
             android:ems="10"
@@ -124,7 +118,7 @@
             android:inputType="textPassword" />
 
         <EditText
-            android:id="@+id/pwWarning"
+            android:id="@+id/charityRegistPwWarning"
             android:layout_width="300dp"
             android:layout_height="40dp"
             android:layout_below="@id/charityRegistPw"
@@ -146,7 +140,6 @@
             android:layout_width="310dp"
             android:layout_height="55dp"
             android:layout_below="@+id/charityRegistPw"
-            android:layout_alignParentLeft="false"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
             android:ems="10"
@@ -155,7 +148,7 @@
             android:inputType="textPassword" />
 
         <EditText
-            android:id="@+id/confirmPwWarning"
+            android:id="@+id/charityConfirmPwWarning"
             android:layout_width="300dp"
             android:layout_height="40dp"
             android:layout_below="@id/charityConfirmPw"
@@ -177,7 +170,6 @@
             android:layout_width="310dp"
             android:layout_height="55dp"
             android:layout_below="@+id/charityRegistName"
-            android:layout_alignParentLeft="false"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
             android:ems="10"
@@ -194,7 +186,6 @@
             android:elegantTextHeight="false"
             android:ems="10"
             android:gravity="center"
-            android:importantForAutofill="no"
             android:inputType="none"
             android:text="@string/title_charity_registration" />
 
@@ -202,8 +193,7 @@
             android:id="@+id/charityRegistName"
             android:layout_width="310dp"
             android:layout_height="55dp"
-            android:layout_below="@+id/donorRegTitle"
-            android:layout_alignParentLeft="false"
+            android:layout_below="@+id/charityRegTitle"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
             android:ems="10"
@@ -220,6 +210,5 @@
             android:layout_marginTop="50dp"
             android:onClick="charityRegisterAction"
             android:text="@string/register_button" />
-
     </RelativeLayout>
 </ScrollView>

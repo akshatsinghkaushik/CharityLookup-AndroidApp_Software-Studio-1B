@@ -17,7 +17,6 @@ import java.util.regex.Pattern;
 public class CharityRegistration extends AppCompatActivity {
 
     //Initialising widgets
-    ScrollView scrollView;
     TextView charityName;
     TextView otherName;
     TextView password;
@@ -40,16 +39,15 @@ public class CharityRegistration extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         //Linking instances to widgets
-        scrollView = findViewById(R.id.ScrollVieww);
         charityName = findViewById(R.id.charityRegistName);
         otherName = findViewById(R.id.charityRegistOtherName);
         password = findViewById(R.id.charityRegistPw);
-        passwordWarning = findViewById(R.id.pwWarning);
+        passwordWarning = findViewById(R.id.charityRegistPwWarning);
         confirmPassword = findViewById(R.id.charityConfirmPw);
-        confirmPwWarning = findViewById(R.id.confirmPwWarning);
+        confirmPwWarning = findViewById(R.id.charityConfirmPwWarning);
         ABN = findViewById(R.id.charityRegistABN);
         email = findViewById(R.id.charityRegistEmail);
-        emailWarning = findViewById(R.id.charityEmailWarning);
+        emailWarning = findViewById(R.id.charityRegistEmailWarning);
         phoneNo = findViewById(R.id.charityRegistPhoneNo);
         charityWebsite = findViewById(R.id.charityRegistWebsite);
         dateEst = findViewById(R.id.charityDateEst);
@@ -61,7 +59,6 @@ public class CharityRegistration extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 
         //If the details satisfy all conditions, proceed with registration
-
         boolean strongPw = password.getText().length() >= 4;
         boolean pwMatch = String.valueOf(password.getText()).equals(String.valueOf(confirmPassword.getText()));
         boolean correctEmailFormat = Pattern.compile("^([^.@]+)(\\.[^.@]+)*@([^.@]+\\.)+([^.@]+)$").matcher(email.getText()).matches();
