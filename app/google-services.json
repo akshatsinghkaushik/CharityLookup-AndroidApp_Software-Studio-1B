@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "254819476708",
+    "firebase_url": "https://charity-lookup-test.firebaseio.com",
+    "project_id": "charity-lookup-test",
+    "storage_bucket": "charity-lookup-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:254819476708:android:1f3ef613df3c6bc5",
+        "android_client_info": {
+          "package_name": "com.dude.funky.charitylookup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "254819476708-4vo9fabr4v3e3m61aa2c6qbalitnd0ap.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dude.funky.charitylookup",
+            "certificate_hash": "346a9a9119d85649fd2e18cc6b7e374f235edfbe"
+          }
+        },
+        {
+          "client_id": "254819476708-on9hda2bpc7r5bq6687khteopnnhh849.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQnLZQS6ZIO-ZhWK0l1iw3L0GeqOaZb04"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "254819476708-on9hda2bpc7r5bq6687khteopnnhh849.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
