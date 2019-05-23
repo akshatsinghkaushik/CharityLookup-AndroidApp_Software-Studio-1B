@@ -22,8 +22,11 @@
     <string name="registration_first_name">First Name</string>
     <string name="registration_last_name">Last Name</string>
     <string name="registration_email">Email</string>
-    <string name="registration_password">Password</string>
-    <string name="registration_password_warning">Password must be minimum 4 characters</string>
+    <string name="registration_email_warning">Email is invalid!</string>
+    <string name="registration_password">Password (min 4 characters)</string>
+    <string name="registration_password_warning">Password must be minimum 4 characters!</string>
+    <string name="registration_confirm_password">Confirm Password</string>
+    <string name="registration_confirm_password_warning">Passwords don\'t match!</string>
     <string name="registration_phone_number">Phone No</string>
     <string name="register_button">Register</string>
 
