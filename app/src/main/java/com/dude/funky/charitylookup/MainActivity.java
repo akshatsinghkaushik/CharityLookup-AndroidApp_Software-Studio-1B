@@ -132,7 +132,8 @@ public class MainActivity extends AppCompatActivity {
         }   else {
 
             text.setText(getString(R.string.firebase_login));
-            Picasso.get().load(R.drawable.ic_firebase_logo).into(image);
+            image.setImageResource(R.drawable.ic_firebase_logo);
+           // Picasso.get().load(R.drawable.ic_firebase_logo).into(image);
             btn_login.setVisibility(View.VISIBLE);
             btn_logout.setVisibility(View.INVISIBLE);
 
