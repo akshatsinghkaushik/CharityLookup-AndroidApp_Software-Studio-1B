@@ -1,6 +1,4 @@
 <resources>
-    <string name="google_client_id">254819476708-on9hda2bpc7r5bq6687khteopnnhh849.apps.googleusercontent.com</string>
-
     <string name="app_name">CharityLookup</string>
     <string name="firebase_login">Firebase Login</string>
     <string name="login_with_google">Login with Google</string>

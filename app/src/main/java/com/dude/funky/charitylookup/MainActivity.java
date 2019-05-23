@@ -50,8 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions
                 .Builder()
-                //.requestIdToken(getString(R.string.default_web_client_id))
-                .requestIdToken("254819476708-on9hda2bpc7r5bq6687khteopnnhh849.apps.googleusercontent.com")
+                .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
 
@@ -101,15 +100,14 @@ public class MainActivity extends AppCompatActivity {
                         progressBar.setVisibility(View.INVISIBLE);
                         Log.d("TAG","signin success");
 
-                        Toast.makeText(this,"SignIn", Toast.LENGTH_SHORT);
-
                         FirebaseUser user = mAuth.getCurrentUser();
+                        updateUI(user);
 
                     } else {
                         progressBar.setVisibility(View.INVISIBLE);
                         Log.w("TAG","signin failure", task.getException());
 
-                        Toast.makeText(this,"SignIn Failed!", Toast.LENGTH_SHORT);
+                        Toast.makeText(this,"SignIn Failed!", Toast.LENGTH_SHORT).show();
                         updateUI(null);
                     }
                 });
@@ -122,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
             String email = user.getEmail();
             String photo = String.valueOf(user.getPhotoUrl());
 
-            text.append("Info: \n");
+            text.setText("Info: \n");
             text.append(name + "\n");
             text.append(email);
 
@@ -134,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
         }   else {
 
             text.setText(getString(R.string.firebase_login));
-            Picasso.get().load(R.drawable.ic_firebase_logo);
+            Picasso.get().load(R.drawable.ic_firebase_logo).into(image);
             btn_login.setVisibility(View.VISIBLE);
             btn_logout.setVisibility(View.INVISIBLE);
 
