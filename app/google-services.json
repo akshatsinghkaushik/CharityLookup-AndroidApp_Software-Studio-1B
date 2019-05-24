@@ -1,21 +1,29 @@
 {
   "project_info": {
-    "project_number": "254819476708",
-    "firebase_url": "https://charity-lookup-test.firebaseio.com",
-    "project_id": "charity-lookup-test",
-    "storage_bucket": "charity-lookup-test.appspot.com"
+    "project_number": "1087627007186",
+    "firebase_url": "https://charitylookup-e0e85.firebaseio.com",
+    "project_id": "charitylookup-e0e85",
+    "storage_bucket": "charitylookup-e0e85.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:254819476708:android:1f3ef613df3c6bc5",
+        "mobilesdk_app_id": "1:1087627007186:android:1f3ef613df3c6bc5",
         "android_client_info": {
           "package_name": "com.dude.funky.charitylookup"
         }
       },
       "oauth_client": [
         {
-          "client_id": "254819476708-4vo9fabr4v3e3m61aa2c6qbalitnd0ap.apps.googleusercontent.com",
+          "client_id": "1087627007186-eedlnka0aubkqhipvhrj3ndaekflcn4c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dude.funky.charitylookup",
+            "certificate_hash": "5691dc990020a25f03698e44067136b5a6889efa"
+          }
+        },
+        {
+          "client_id": "1087627007186-jv9pbioinasu1o0bpk3d4kqjspchpfop.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.dude.funky.charitylookup",
@@ -23,20 +31,44 @@
           }
         },
         {
-          "client_id": "254819476708-on9hda2bpc7r5bq6687khteopnnhh849.apps.googleusercontent.com",
+          "client_id": "1087627007186-4pc4mjrkske98br1aev24ardfm9e50u7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dude.funky.charitylookup",
+            "certificate_hash": "0caf06e2cb23a7d55035b6accf0e0d38a1a98531"
+          }
+        },
+        {
+          "client_id": "1087627007186-3eu1l1vs3qdk982lf8ee7bjo4il22m7v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dude.funky.charitylookup",
+            "certificate_hash": "867d6095499724517585d4bb475cecbc9ead404e"
+          }
+        },
+        {
+          "client_id": "1087627007186-2hpvj55pobhnfbtb2cs4tnrq2puas4kg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dude.funky.charitylookup",
+            "certificate_hash": "7dbb96e599910aa96b024db1566f8334f63c88cf"
+          }
+        },
+        {
+          "client_id": "1087627007186-h75smbb1it1cd1602errecn6r6ce0mrv.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAQnLZQS6ZIO-ZhWK0l1iw3L0GeqOaZb04"
+          "current_key": "AIzaSyDajp8g0t2IB8uoMaCrnOOtRAmHGo2ll0M"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "254819476708-on9hda2bpc7r5bq6687khteopnnhh849.apps.googleusercontent.com",
+              "client_id": "1087627007186-h75smbb1it1cd1602errecn6r6ce0mrv.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
