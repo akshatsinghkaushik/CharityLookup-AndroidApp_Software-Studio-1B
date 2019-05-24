@@ -77,7 +77,7 @@ public class DonorRegistration extends AppCompatActivity {
             mRef.setValue(userInfo);
 
             //Creates new user in database authentication instance
-            mAuth.createUserWithEmailAndPassword(String.valueOf(email.getText()), String.valueOf(password.getText()))
+            mAuth.createUserWithEmailAndPassword(email.getText().toString(), password.getText().toString())
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
