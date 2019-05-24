@@ -1,12 +1,20 @@
 package com.dude.funky.charitylookup;
 
+import android.nfc.Tag;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -14,7 +22,7 @@ import java.util.regex.Pattern;
 
 public class DonorRegistration extends AppCompatActivity {
 
-    //Initialising widgets
+    //Initialisations
     TextView username;
     TextView firstName;
     TextView lastName;
@@ -26,12 +34,16 @@ public class DonorRegistration extends AppCompatActivity {
     TextView confirmPwWarning;
     TextView phoneNo;
 
+    FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.donor_registration);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        mAuth = FirebaseAuth.getInstance();
 
         //Linking instances to widgets
         username = findViewById(R.id.donorRegistUsername);
@@ -64,8 +76,24 @@ public class DonorRegistration extends AppCompatActivity {
             DatabaseReference mRef = database.getReference().child("Donors").child(String.valueOf(username.getText()));
             mRef.setValue(userInfo);
 
-            //Popup telling user that registration has been successful
-            Toast.makeText(getApplicationContext(), "Registration successful", Toast.LENGTH_LONG).show();
+            //Creates new user in database authentication instance
+            mAuth.createUserWithEmailAndPassword(String.valueOf(email.getText()), String.valueOf(password.getText()))
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                //Sign in is successful
+                                FirebaseUser user = mAuth.getCurrentUser();
+                                Toast.makeText(getApplicationContext(), "Registration successful", Toast.LENGTH_LONG).show();
+                            }
+                            else {
+                                //Sign in unsuccessful
+                                Toast.makeText(getApplicationContext(), "Registration successful", Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    });
+
+
         }
         else if (!correctEmailFormat) {
             emailWarning.setVisibility(View.VISIBLE);
