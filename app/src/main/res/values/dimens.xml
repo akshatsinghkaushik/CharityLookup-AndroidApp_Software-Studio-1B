@@ -1,0 +1,4 @@
+<?xml version="1.0" encodings ="utf-8"?>
+<resources>
+    <dimen name="textCardSize">18dp</dimen>
+</resources>

@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".HomePage_Cards"
+            android:label="@string/title_activity_home_page__cards"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".HomeActivity"
             android:label="HomePage"
             android:theme="@style/AppTheme.NoActionBar">
