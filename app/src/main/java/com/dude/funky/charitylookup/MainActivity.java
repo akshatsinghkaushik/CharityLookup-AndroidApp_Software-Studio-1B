@@ -23,7 +23,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.squareup.picasso.Picasso;
 
-import junit.framework.Test;
+
 
 public class MainActivity extends AppCompatActivity {
 

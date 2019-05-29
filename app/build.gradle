@@ -25,28 +25,45 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:27.1.1'
+
+    //Constraint Layout
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
 
+    //FireBase
     implementation 'com.google.firebase:firebase-core:16.0.9'
     implementation 'com.google.firebase:firebase-auth:17.0.0'
     implementation 'com.google.firebase:firebase-database:17.0.0'
     implementation 'com.google.firebase:firebase-storage:17.0.0'
+    implementation 'com.google.firebase:firebase-firestore:19.0.0'
 
+    //Card View
+    implementation 'com.android.support:cardview-v7:27.0.0'
+
+    //Recycler View
+    implementation 'com.android.support:recyclerview-v7:27.0.0'
+
+    //Picasso Image Loader
     implementation 'com.squareup.picasso:picasso:2.71828'
 
+    //PasswordChecker
     implementation 'com.github.yesterselga:password-strength-checker-android:v1.0'
 
+    //Play Services
     implementation 'com.google.android.gms:play-services-auth:16.0.1'
 
+    //Banner Slider
     implementation 'com.ss.bannerslider:bannerslider:2.0.0'
 
+    //ButterKnife
+    implementation 'com.jakewharton:butterknife:10.1.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
+
+    //Test & Miscellaneous
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    implementation 'com.jakewharton:butterknife:10.1.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
-
 }
 
+//Enable Play Services for Google APIs
 apply plugin: 'com.google.gms.google-services'
