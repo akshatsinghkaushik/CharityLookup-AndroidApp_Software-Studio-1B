@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimaryBackup">#008577</color>
-    <color name="colorPrimary">#00a2ff</color>
-    <color name="colorPrimaryDark">#0183ce</color>
-    <color name="colorAccent">#ffcc00</color>
+
 
 
     <color name="colorPrimary1">#008577</color>
@@ -12,4 +10,35 @@
     <color name="colorButton">#373738</color>
     <color name="colorBackground">#FDF9EE</color>
     <color name="homeBackground">#DFDFDF</color>
+
+
+
+    <color name="colorPrimary">#23A7D8</color>
+    <color name="colorPrimaryDark">#23A7D8</color>
+    <color name="colorAccent">#FFFFFF</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="gradStart">#1d69e2</color>
+    <color name="gradStop">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+
+    <color name="colorPrimary2">#00bfbf</color>
+    <color name="colorPrimaryDark2">#555959</color>
+    <color name="colorAccent2">#009e9e</color>
+
+    <color name="bg_login">#26ae90</color>
+    <color name="bg_register">#2e3237</color>
+    <color name="bg_main">#428bca</color>
+    <color name="white2">#ffffff</color>
+    <color name="input_login">#222222</color>
+    <color name="input_login_hint">#999999</color>
+    <color name="input_register">#888888</color>
+    <color name="input_register_bg">#3b4148</color>
+    <color name="input_register_hint">#5e6266</color>
+    <color name="btn_login">#26ae90</color>
+    <color name="btn_login_bg">#eceef1</color>
+    <color name="lbl_name">#333333</color>
+    <color name="btn_logut_bg">#ff6861</color>
 </resources>

@@ -17,11 +17,11 @@ public class HomePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
-        Fragment androidFragment = new HomeFragment();
-        this.setDefaultFragment(androidFragment);
+        //Fragment androidFragment = new HomeFragment();
+        //this.setDefaultFragment(androidFragment);
 
     }
-
+    /**
     // This method is used to set the default fragment that will be shown.
     private void setDefaultFragment(Fragment defaultFragment)
     {
@@ -42,5 +42,5 @@ public class HomePage extends AppCompatActivity {
 
         // Commit the Fragment replace action.
         fragmentTransaction.commit();
-    }
+    }*/
 }

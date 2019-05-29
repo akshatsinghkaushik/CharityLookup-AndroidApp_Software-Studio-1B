@@ -11,13 +11,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
         <activity android:name=".HomePage">
+
+        </activity>
+        <activity android:name=".Pass">
+
+        </activity>
+        <activity android:name=".Account.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Pass"></activity>
+        <activity android:name=".Account.ResetPasswordActivity"></activity>
+        <activity android:name=".Account.SignUpActivity" />
         <activity android:name=".MainActivity">
 
         </activity>
