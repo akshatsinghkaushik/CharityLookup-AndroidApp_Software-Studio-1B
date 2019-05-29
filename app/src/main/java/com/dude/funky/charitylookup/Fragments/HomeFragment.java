@@ -1,10 +1,7 @@
 package com.dude.funky.charitylookup.Fragments;
 
-import android.app.Fragment;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,13 +9,19 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.dude.funky.charitylookup.Adapter.HomeSliderAdapter;
+import com.dude.funky.charitylookup.Adapter.LookBookAdapter;
 import com.dude.funky.charitylookup.Interface.IBannerLoadListener;
 import com.dude.funky.charitylookup.Interface.ILookBookLoadListener;
 import com.dude.funky.charitylookup.Model.Banner;
 import com.dude.funky.charitylookup.R;
 import com.dude.funky.charitylookup.Service.PicassoImageLoadingService;
-import com.google.android.gms.auth.GoogleAuthUtil;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -169,7 +172,7 @@ public class HomeFragment extends Fragment implements IBannerLoadListener, ILook
     public void onLookbookLoadSuccess(List<Banner> banners) {
         recycler_look_book.setHasFixedSize(true);
         recycler_look_book.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recycler_look_book.setAdapter(new )
+        recycler_look_book.setAdapter(new LookBookAdapter(getActivity(),banners));
     }
 
     @Override
