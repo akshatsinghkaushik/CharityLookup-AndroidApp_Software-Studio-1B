@@ -1,5 +1,6 @@
 package com.dude.funky.charitylookup.Account;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.dude.funky.charitylookup.MainActivity;
 import com.dude.funky.charitylookup.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -60,6 +62,9 @@ public class ResetPasswordActivity extends AppCompatActivity {
 
                                 progressBar.setVisibility(View.GONE);
                                 btnReset.setVisibility(View.VISIBLE);
+
+                                Intent intent = new Intent(ResetPasswordActivity.this, MainActivity.class);
+                                startActivity(intent);
                             }
                         });
             }

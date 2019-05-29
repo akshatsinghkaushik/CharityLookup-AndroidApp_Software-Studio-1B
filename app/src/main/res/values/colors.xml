@@ -19,8 +19,8 @@
 
     <color name="white">#FFFFFF</color>
     <color name="transparent">#00000000</color>
-    <color name="gradStart">#1d69e2</color>
-    <color name="gradStop">#FFFFFF</color>
+    <color name="gradStart">#E29A1D</color>
+    <color name="gradStop">#F7D20C</color>
     <color name="black">#000000</color>
 
 
@@ -33,7 +33,7 @@
     <color name="bg_main">#428bca</color>
     <color name="white2">#ffffff</color>
     <color name="input_login">#222222</color>
-    <color name="input_login_hint">#999999</color>
+    <color name="input_login_hint">#BFCACACA</color>
     <color name="input_register">#888888</color>
     <color name="input_register_bg">#3b4148</color>
     <color name="input_register_hint">#5e6266</color>

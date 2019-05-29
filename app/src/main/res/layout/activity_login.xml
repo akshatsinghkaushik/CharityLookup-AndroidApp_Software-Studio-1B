@@ -17,24 +17,27 @@
         <ImageView
             android:id="@+id/imgView_logo"
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
+            android:layout_height="159dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/ic_firebase_logo" />
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_firebase_logo"
+            android:outlineAmbientShadowColor="@color/black"
+            android:outlineSpotShadowColor="@color/black"/>
 
         <RelativeLayout
             android:id="@+id/rellay1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imgView_logo"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:id="@+id/login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-medium"
-                android:textColor="@color/white"/>
+                android:textColor="@color/black"/>
                 <!--android:text="Login"-->
 
             <LinearLayout
@@ -57,7 +60,7 @@
                         android:fontFamily="sans-serif-light"
                         android:text="Username"
                         android:textAllCaps="true"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="15sp" />
 
                     <EditText
@@ -69,6 +72,7 @@
                         android:paddingLeft="15dp"
                         android:paddingRight="15dp"
                         android:textColor= "@color/black"
+                        android:backgroundTint="#BFCACACA"
                         android:textSize="15sp"
                         android:id="@+id/EmailSignIn"
                         android:textCursorDrawable="@null"/>
@@ -87,7 +91,7 @@
                         android:fontFamily="sans-serif-light"
                         android:text="Password"
                         android:textAllCaps="true"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="15sp" />
 
                     <EditText
@@ -99,6 +103,7 @@
                         android:paddingLeft="15dp"
                         android:paddingRight="15dp"
                         android:textColor="@color/black"
+                        android:backgroundTint="#BFCACACA"
                         android:textSize="15sp"
                         android:inputType="textPassword"
                         android:id="@+id/PasswordSignIn"
@@ -119,7 +124,7 @@
                 android:paddingRight="70dp"
                 android:text="Login"
                 android:textAllCaps="false"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 android:visibility="visible"
                 android:id="@+id/LoginButtonSignIn"/>
@@ -133,6 +138,22 @@
                 android:layout_below="@+id/line1"
                 android:visibility="gone"/>
 
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_below="@id/LoginButtonSignIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:textSize="12sp"
+                android:paddingRight="10dp"
+                android:text="@string/login_with_google"
+                android:background="@drawable/round_bg"
+                android:drawablePadding="5dp"
+                android:drawableStart="@drawable/ic_google_logo"
+                android:drawableLeft="@drawable/ic_google_logo"
+                />
+
         </RelativeLayout>
 
     </RelativeLayout>
@@ -144,7 +165,9 @@
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:visibility="gone">
+        android:visibility="visible">
+
+
 
         <Button
             android:layout_width="wrap_content"
@@ -154,7 +177,7 @@
             android:fontFamily="sans-serif"
             android:text="Sign Up"
             android:textAllCaps="true"
-            android:textColor="@color/white" />
+            android:textColor="@color/black" />
 
         <Button
             android:layout_width="wrap_content"
@@ -166,7 +189,7 @@
             android:text="Forget\nPassword"
             android:layout_marginBottom="7dp"
             android:textAllCaps="true"
-            android:textColor="@color/white" />
+            android:textColor="@color/black" />
 
     </RelativeLayout>
 
