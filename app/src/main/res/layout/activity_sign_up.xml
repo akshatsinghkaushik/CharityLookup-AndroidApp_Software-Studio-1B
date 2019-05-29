@@ -16,7 +16,7 @@
         <ImageView
             android:id="@+id/imgView_logo"
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
+            android:layout_height="149dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_firebase_logo" />
@@ -31,7 +31,7 @@
                 android:id="@+id/login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="5dp"
                 android:fontFamily="sans-serif-medium"
 
                 android:textColor="@color/white"
