@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,13 +17,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.dude.funky.charitylookup.MainActivity;
 import com.dude.funky.charitylookup.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    private EditText inputEmail, inputPassword;
+    private EditText inputEmail, inputPassword, inputName;
     private Button btnSignIn, btnSignUp, btnResetPassword;
     private ProgressBar progressBar;
     private FirebaseAuth auth;
@@ -38,10 +47,12 @@ public class SignUpActivity extends AppCompatActivity {
         //btnSignIn = (Button) findViewById(R.id.);
         btnSignUp = (Button) findViewById(R.id.SignUpSignUp);
         inputEmail = (EditText) findViewById(R.id.EmailSignUp);
+        inputName = (EditText) findViewById(R.id.DisplayName);
         inputPassword = (EditText) findViewById(R.id.PasswordSignUp);
         progressBar = (ProgressBar) findViewById(R.id.LoginProgressSignUp);
         //btnResetPassword = (Button) findViewById(R.id.ForgotPassSignIn);
 
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         /**btnResetPassword.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,10 +74,16 @@ public class SignUpActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 String email = inputEmail.getText().toString().trim();
+                String name_user = inputName.getText().toString().trim();
                 String password = inputPassword.getText().toString().trim();
 
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (TextUtils.isEmpty(name_user)) {
+                    Toast.makeText(getApplicationContext(), "Enter Display NAme!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -99,6 +116,38 @@ public class SignUpActivity extends AppCompatActivity {
                                     Toast.makeText(SignUpActivity.this, "Authentication failed." + task.getException(),
                                             Toast.LENGTH_SHORT).show();
                                 } else {
+
+                                    FirebaseUser user = auth.getCurrentUser();
+
+                                    user.sendEmailVerification();
+
+                                    String token = auth.getCurrentUser().getUid();
+
+
+                                    // Create a new user with a first and last name
+                                    Map<String, Object> donor = new HashMap<>();
+                                    donor.put("UID", token);
+                                    donor.put("Name", name_user);
+                                    donor.put("Email", email);
+
+                                    // Add a new document with a generated ID
+                                    db.collection("Donors")
+                                            .add(donor)
+                                            .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                                @Override
+                                                public void onSuccess(DocumentReference documentReference) {
+                                                    Log.d("TAG", "DocumentSnapshot added with ID: " + documentReference.getId());
+                                                }
+                                            })
+                                            .addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception e) {
+                                                    Log.w("TAG", "Error adding document", e);
+                                                }
+                                            });
+
+
+
                                     startActivity(new Intent(SignUpActivity.this, MainActivity.class));
                                     finish();
                                 }
