@@ -7,5 +7,9 @@
     <color name="colorAccent">#D684A2</color>
     <color name="colourLightGreen">#A6F0E8</color>
     <color name="colourPurple">#D7CCE7</color>
+    <color name="colourPink">#E9CAEE</color>
+    <color name="colourPrimaryLighter1">#6D8AA3</color>
+    <color name="colourLightYellow">#F0ECCC</color>
+    <color name="colourOffWhite">#F5E6EB</color>
 
 </resources>
