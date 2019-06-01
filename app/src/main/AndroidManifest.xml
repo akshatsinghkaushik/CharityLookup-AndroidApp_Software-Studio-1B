@@ -15,12 +15,15 @@
         <activity android:name=".Pass">
 
         </activity>
-        <activity android:name=".Account.LoginActivity">
+        <activity android:name=".View.Main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".Account.LoginActivity">
+
         </activity>
         <activity android:name=".Account.ResetPasswordActivity"></activity>
         <activity android:name=".Account.SignUpActivity" />
