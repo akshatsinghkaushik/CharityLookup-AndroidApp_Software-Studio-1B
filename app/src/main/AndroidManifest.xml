@@ -15,7 +15,7 @@
         <activity android:name=".Pass">
 
         </activity>
-        <activity android:name=".View.Main">
+        <activity android:name=".View.Main_main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -63,6 +63,12 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-compat'
     }
 
+    implementation 'com.firebaseui:firebase-ui-firestore:5.0.0'
+
+    implementation 'com.google.android.material:material:1.0.0'
+
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+
     //Card View
     implementation 'androidx.cardview:cardview:1.0.0'
 
@@ -102,6 +108,9 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotation'
         exclude group: 'com.android.support', module: 'support-compat'
     }
+
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
     //Test & Miscellaneous
     //testImplementation 'junit:junit:4.12'
