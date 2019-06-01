@@ -126,9 +126,9 @@ public class SignUpActivity extends AppCompatActivity {
 
                                     // Create a new user with a first and last name
                                     Map<String, Object> donor = new HashMap<>();
-                                    donor.put("UID", token);
-                                    donor.put("Name", name_user);
-                                    donor.put("Email", email);
+                                    donor.put("uid", token);
+                                    donor.put("name", name_user);
+                                    donor.put("email", email);
 
                                     // Add a new document with a generated ID
                                     db.collection("Donors")

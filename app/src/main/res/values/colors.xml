@@ -11,6 +11,9 @@
     <color name="colorBackground">#FDF9EE</color>
     <color name="homeBackground">#DFDFDF</color>
 
+    <color name="grey_300">#E0E0E0</color>
+    <color name="color_white">#fefefe</color>
+
 
 
     <color name="colorPrimary">#23A7D8</color>
