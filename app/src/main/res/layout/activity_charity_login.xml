@@ -152,6 +152,7 @@
                 android:drawablePadding="5dp"
                 android:drawableStart="@drawable/ic_google_logo"
                 android:drawableLeft="@drawable/ic_google_logo"
+                android:visibility="gone"
                 />
 
             <Button
