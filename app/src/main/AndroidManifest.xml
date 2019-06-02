@@ -11,22 +11,34 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".Pass">
+        android:theme="@style/AppTheme">
+        <activity android:name=".Pass"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity android:name=".Account.CharityLogin"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity android:name=".Account.CharityRegistration"
+            android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
         <activity android:name=".View.Main_main">
+
+        </activity>
+        <activity android:name=".Account.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Account.LoginActivity">
-
-        </activity>
-        <activity android:name=".Account.ResetPasswordActivity"></activity>
-        <activity android:name=".Account.SignUpActivity" />
+        <activity android:name=".Account.ResetPasswordActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Account.SignUpActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".MainActivity">
 
         </activity>

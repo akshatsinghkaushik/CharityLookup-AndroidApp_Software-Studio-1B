@@ -3,8 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="16dp"
-    android:background="@color/colorBackground"
+    android:background="@drawable/grad_bg"
     tools:context="com.dude.funky.charitylookup.View.Main_main">
 
     <ProgressBar
@@ -18,5 +19,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:divider="#00000000"/>
+
+
+
 
 </RelativeLayout>

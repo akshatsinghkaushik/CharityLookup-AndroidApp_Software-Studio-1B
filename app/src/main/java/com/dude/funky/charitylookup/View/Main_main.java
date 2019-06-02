@@ -1,8 +1,12 @@
 package com.dude.funky.charitylookup.View;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
@@ -14,11 +18,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.dude.funky.charitylookup.Account.CharityLogin;
+import com.dude.funky.charitylookup.Account.LoginActivity;
+import com.dude.funky.charitylookup.Account.MakeBooking;
 import com.dude.funky.charitylookup.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
@@ -43,6 +51,10 @@ public class Main_main extends AppCompatActivity {
     private FirestoreRecyclerAdapter adapter;
     LinearLayoutManager linearLayoutManager;
 
+    //FloatingActionButton fab = findViewById(R.id.fab);
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +62,42 @@ public class Main_main extends AppCompatActivity {
         ButterKnife.bind(this);
         init();
         getFriendList();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+
+        inflater.inflate(R.menu.menu_main, menu);
+
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        //respond to menu item selection
+
+        switch (item.getItemId()) {
+
+            case R.id.logout:
+
+                startActivity(new Intent(this, LoginActivity.class));
+
+                return true;
+
+            case R.id.profile:
+
+                startActivity(new Intent(this, CharityLogin.class));
+
+                return true;
+
+            default:
+
+                return super.onOptionsItemSelected(item);
+
+        }
+
+
     }
 
     private void init(){
@@ -77,14 +125,14 @@ public class Main_main extends AppCompatActivity {
                 progressBar.setVisibility(View.GONE);
                 holder.textName.setText(model.getName());
 
-                holder.textTitle.setText(model.getTitle());
-                holder.textCompany.setText(model.getCompany());
+                holder.textTitle.setText(model.getUID());
+                holder.textCompany.setText(model.getEmail());
                 //Glide.with(getApplicationContext())
                 //.load(model.getImage())
                 //.into(holder.imageView);
 
                 holder.itemView.setOnClickListener(v -> {
-                    Snackbar.make(friendList, model.getName()+", "+model.getTitle()+" at "+model.getCompany(), Snackbar.LENGTH_LONG)
+                    Snackbar.make(friendList, model.getName()+", "+model.getUID()+" at "+model.getEmail(), Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                 });
             }
@@ -105,6 +153,13 @@ public class Main_main extends AppCompatActivity {
 
         adapter.notifyDataSetChanged();
         friendList.setAdapter(adapter);
+
+        //fab.setOnClickListener(v -> launchMakeBooking());
+    }
+
+    void launchMakeBooking(){
+        Intent intent = new Intent(Main_main.this, MakeBooking.class);
+        startActivity(intent);
     }
 
     public class FriendsHolder extends RecyclerView.ViewHolder {

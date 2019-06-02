@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-medium"
                 android:textColor="@color/black"/>
-                <!--android:text="Login"-->
+            <!--android:text="Login"-->
 
             <LinearLayout
                 android:id="@+id/line1"
@@ -155,7 +155,7 @@
                 />
 
             <Button
-                android:id="@+id/charity_login"
+                android:id="@+id/donor_login"
                 android:layout_below="@id/LoginButtonSignIn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -164,7 +164,7 @@
                 android:textSize="10sp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:text="Charity Login"
+                android:text="Donor Login"
                 android:background="@drawable/bt_bg"
                 />
 
