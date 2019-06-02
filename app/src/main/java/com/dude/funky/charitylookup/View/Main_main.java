@@ -51,9 +51,6 @@ public class Main_main extends AppCompatActivity {
     private FirestoreRecyclerAdapter adapter;
     LinearLayoutManager linearLayoutManager;
 
-    //FloatingActionButton fab = findViewById(R.id.fab);
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -134,6 +131,7 @@ public class Main_main extends AppCompatActivity {
                 holder.itemView.setOnClickListener(v -> {
                     Snackbar.make(friendList, model.getName()+", "+model.getUID()+" at "+model.getEmail(), Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
+                        launchMakeBooking();
                 });
             }
 
@@ -154,7 +152,7 @@ public class Main_main extends AppCompatActivity {
         adapter.notifyDataSetChanged();
         friendList.setAdapter(adapter);
 
-        //fab.setOnClickListener(v -> launchMakeBooking());
+
     }
 
     void launchMakeBooking(){

@@ -16,6 +16,10 @@
             android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
+        <activity android:name=".Account.MakeBooking"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
         <activity android:name=".Account.CharityLogin"
             android:theme="@style/AppTheme.NoActionBar">
 
