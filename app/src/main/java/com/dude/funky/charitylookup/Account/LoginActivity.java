@@ -160,6 +160,8 @@ public class LoginActivity extends AppCompatActivity {
                                     }
                                 } else {
                                     Intent intent = new Intent(LoginActivity.this, Main_main.class);
+                                    Log.w("TAG",email);
+                                    intent.putExtra("donor_email", email );
                                     startActivity(intent);
                                     //finish();
                                 }
@@ -177,6 +179,7 @@ public class LoginActivity extends AppCompatActivity {
         btnSignIn.setVisibility(GONE);
         btn_login.setVisibility(GONE);
         Intent signIntent = mGoogleSignInClient.getSignInIntent();
+        signIntent.putExtra("donor_email", auth.getCurrentUser().getEmail() );
         startActivityForResult(signIntent, GOOGLE_SIGN);
     }
 
@@ -243,6 +246,7 @@ public class LoginActivity extends AppCompatActivity {
             //Picasso.get().load(photo).into(image);
             btn_login.setVisibility(View.INVISIBLE);
             Intent intent = new Intent(LoginActivity.this, Main_main.class);
+            intent.putExtra("donor_email", auth.getCurrentUser().getEmail() );
             startActivity(intent);
 
             //btn_logout.setVisibility(View.VISIBLE);
@@ -254,6 +258,7 @@ public class LoginActivity extends AppCompatActivity {
             // Picasso.get().load(R.drawable.ic_firebase_logo).into(image);
             btn_login.setVisibility(VISIBLE);
             Intent intent = new Intent(LoginActivity.this, LoginActivity.class);
+            intent.putExtra("donor_email", auth.getCurrentUser().getEmail() );
             startActivity(intent);
             //btn_logout.setVisibility(View.INVISIBLE);
 

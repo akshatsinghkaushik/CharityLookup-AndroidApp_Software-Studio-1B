@@ -1,4 +1,4 @@
-package com.dude.funky.charitylookup.View;
+package com.dude.funky.charitylookup.View.ViewBooking;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,12 +22,13 @@ import com.dude.funky.charitylookup.Account.CharityLogin;
 import com.dude.funky.charitylookup.Account.LoginActivity;
 import com.dude.funky.charitylookup.Account.MakeBooking;
 import com.dude.funky.charitylookup.R;
-import com.dude.funky.charitylookup.View.ViewBooking.BookingView;
+import com.dude.funky.charitylookup.View.ViewBooking.BookingResponse;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
@@ -40,42 +41,43 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class Main_main extends AppCompatActivity {
+public class BookingView extends AppCompatActivity {
 
     @BindView(R.id.progress_bar1)
     ProgressBar progressBar;
 
-    @BindView(R.id.friend_list)
-    RecyclerView friendList;
+    @BindView(R.id.booking_list)
+    RecyclerView bookingList;
 
     private FirebaseFirestore db;
     private FirestoreRecyclerAdapter adapter;
     LinearLayoutManager linearLayoutManager;
 
-
     String message;
+    String message1;
+
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_main);
+        setContentView(R.layout.activity_view_booking);
 
-        Intent intent = getIntent();
-        message = intent.getStringExtra("donor_email");
+        Intent intent1 = getIntent();
+        message = intent1.getStringExtra("donor_email");
+        message1 = intent1.getStringExtra("charity_name");
 
         ButterKnife.bind(this);
         init();
-        getFriendList();
-
+        getBookingList();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
 
-        inflater.inflate(R.menu.menu_main, menu);
+        inflater.inflate(R.menu.menu_booking, menu);
 
         return true;
     }
@@ -92,10 +94,11 @@ public class Main_main extends AppCompatActivity {
 
                 return true;
 
-            case R.id.profile:
+            case R.id.make:
 
-                startActivity(new Intent(this, CharityLogin.class));
-
+                Intent intent1 = new Intent(this, MakeBooking.class);
+                intent1.putExtra("charity_name", message1 );
+                startActivity(intent1);
                 return true;
 
             default:
@@ -109,51 +112,49 @@ public class Main_main extends AppCompatActivity {
 
     private void init(){
         linearLayoutManager = new LinearLayoutManager(getApplicationContext(), RecyclerView.VERTICAL, false);
-        friendList.setLayoutManager(linearLayoutManager);
+        bookingList.setLayoutManager(linearLayoutManager);
         db = FirebaseFirestore.getInstance();
     }
 
-    private void getFriendList(){
-        Query query = db.collection("Charities");
+    private void getBookingList(){
+        Query query = db.collection("Bookings").document(message).collection(message1);
 
-        FirestoreRecyclerOptions<FriendsResponse> response = new FirestoreRecyclerOptions.Builder<FriendsResponse>()
-                .setQuery(query, FriendsResponse.class)
+        FirestoreRecyclerOptions<BookingResponse> response = new FirestoreRecyclerOptions.Builder<BookingResponse>()
+                .setQuery(query, BookingResponse.class)
                 .build();
 
-        adapter = new FirestoreRecyclerAdapter<FriendsResponse, FriendsHolder>(response) {
+        adapter = new FirestoreRecyclerAdapter<BookingResponse, BookingHolder>(response) {
             @Override
-            public void onBindViewHolder(FriendsHolder holder, int position, FriendsResponse model) {
+            public void onBindViewHolder(BookingHolder holder, int position, BookingResponse model) {
                 //CollectionReference citiesRef = db.collection("Test");
                 //Query query1 = citiesRef.whereEqualTo("Name", "Akshat");
 
 
-
+                holder.textDate.setText(model.getDate());
 
                 progressBar.setVisibility(View.GONE);
-                holder.textName.setText(model.getName());
+                holder.textItem.setText(model.getItem());
 
-                holder.textTitle.setText(model.getUID());
-                holder.textCompany.setText(model.getEmail());
-                //Glide.with(getApplicationContext())
-                //.load(model.getImage())
-                //.into(holder.imageView);
+                //holder.textTitle.setText(model.getUID());
+                holder.textTime.setText(model.getTime());
+
 
                 holder.itemView.setOnClickListener(v -> {
-                    Snackbar.make(friendList, model.getName()+", "+model.getUID()+" at "+model.getEmail(), Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
+                    //Snackbar.make(bookingList, model.getName()+", "+model.getUID()+" at "+model.getEmail(), Snackbar.LENGTH_LONG)
+                            //.setAction("Action", null).show();
 
-                    launchBookingView(model.getName());
+
                     //launchMakeBooking(model.getName());
 
                 });
             }
 
             @Override
-            public FriendsHolder onCreateViewHolder(ViewGroup group, int i) {
+            public BookingHolder onCreateViewHolder(ViewGroup group, int i) {
                 View view = LayoutInflater.from(group.getContext())
-                        .inflate(R.layout.list_item, group, false);
+                        .inflate(R.layout.list_booking, group, false);
 
-                return new FriendsHolder(view);
+                return new BookingHolder(view);
             }
 
             @Override
@@ -163,35 +164,28 @@ public class Main_main extends AppCompatActivity {
         };
 
         adapter.notifyDataSetChanged();
-        friendList.setAdapter(adapter);
+        bookingList.setAdapter(adapter);
 
 
     }
 
     void launchMakeBooking(String tp){
-        Intent intent = new Intent(Main_main.this, MakeBooking.class);
+        Intent intent = new Intent(this, MakeBooking.class);
         intent.putExtra("charity_name", tp );
         startActivity(intent);
     }
 
-    void launchBookingView(String tp1){
-        Intent intent = new Intent(Main_main.this, BookingView.class);
-        intent.putExtra("charity_name", tp1 );
-        intent.putExtra("donor_email", message );
-        startActivity(intent);
-    }
-
-    public class FriendsHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.name)
-        TextView textName;
+    public class BookingHolder extends RecyclerView.ViewHolder {
+        @BindView(R.id.item)
+        TextView textItem;
         //@BindView(R.id.image)
         //CircleImageView imageView;
-        @BindView(R.id.title)
-        TextView textTitle;
-        @BindView(R.id.company)
-        TextView textCompany;
+        @BindView(R.id.date)
+        TextView textDate;
+        @BindView(R.id.time)
+        TextView textTime;
 
-        public FriendsHolder(View itemView) {
+        public BookingHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }

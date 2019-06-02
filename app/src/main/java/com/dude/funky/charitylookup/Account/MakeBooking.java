@@ -218,12 +218,13 @@ public class MakeBooking extends AppCompatActivity {
                     progressBar.setVisibility(View.VISIBLE);
 
                     Map<String, Object> booking = new HashMap<>();
-                    booking.put("Time", time);
-                    booking.put("Item", item);
+                    booking.put("time", time);
+                    booking.put("date",date);
+                    booking.put("item", item);
 
                     // Add booking to database
                     db.collection("Bookings").document(user.getEmail())
-                            .collection(charName).document(date)
+                            .collection(charName).document()
                             .set(booking)
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
