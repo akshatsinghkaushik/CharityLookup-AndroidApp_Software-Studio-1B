@@ -128,17 +128,11 @@ public class SignUpActivity extends AppCompatActivity {
                                     Map<String, Object> donor = new HashMap<>();
                                     donor.put("uid", token);
                                     donor.put("name", name_user);
-                                    donor.put("email", email);
+                                    donor.put("email", email.toLowerCase());
 
                                     // Add a new document with a generated ID
-                                    db.collection("Donors")
-                                            .add(donor)
-                                            .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                                                @Override
-                                                public void onSuccess(DocumentReference documentReference) {
-                                                    Log.d("TAG", "DocumentSnapshot added with ID: " + documentReference.getId());
-                                                }
-                                            })
+                                    db.collection("Donors").document(email.toLowerCase())
+                                            .set(donor)
                                             .addOnFailureListener(new OnFailureListener() {
                                                 @Override
                                                 public void onFailure(@NonNull Exception e) {

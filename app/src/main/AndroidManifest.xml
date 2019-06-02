@@ -16,6 +16,14 @@
             android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
+
+        <activity android:name=".Account.DonorProfile">
+
+        </activity>
+        <activity android:name=".Account.EditBooking"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
         <activity android:name=".View.ViewBooking.BookingView">
 
 

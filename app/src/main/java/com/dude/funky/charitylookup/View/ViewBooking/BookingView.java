@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.dude.funky.charitylookup.Account.CharityLogin;
+import com.dude.funky.charitylookup.Account.EditBooking;
 import com.dude.funky.charitylookup.Account.LoginActivity;
 import com.dude.funky.charitylookup.Account.MakeBooking;
 import com.dude.funky.charitylookup.R;
@@ -55,6 +56,7 @@ public class BookingView extends AppCompatActivity {
 
     String message;
     String message1;
+    String message2;
 
 
 
@@ -129,6 +131,9 @@ public class BookingView extends AppCompatActivity {
                 //CollectionReference citiesRef = db.collection("Test");
                 //Query query1 = citiesRef.whereEqualTo("Name", "Akshat");
 
+                CollectionReference art = db.collection("Bookings").document(message).collection(message1);
+                message2 = "";
+
 
                 holder.textDate.setText(model.getDate());
 
@@ -144,7 +149,7 @@ public class BookingView extends AppCompatActivity {
                             //.setAction("Action", null).show();
 
 
-                    //launchMakeBooking(model.getName());
+                    launchEditBooking(message1);
 
                 });
             }
@@ -169,8 +174,9 @@ public class BookingView extends AppCompatActivity {
 
     }
 
-    void launchMakeBooking(String tp){
-        Intent intent = new Intent(this, MakeBooking.class);
+    void launchEditBooking(String tp){
+        Intent intent = new Intent(this, EditBooking.class);
+        intent.putExtra("charity_name", tp );
         intent.putExtra("charity_name", tp );
         startActivity(intent);
     }

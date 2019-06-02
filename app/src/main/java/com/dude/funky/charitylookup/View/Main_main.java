@@ -19,15 +19,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.dude.funky.charitylookup.Account.CharityLogin;
+import com.dude.funky.charitylookup.Account.DonorProfile;
 import com.dude.funky.charitylookup.Account.LoginActivity;
 import com.dude.funky.charitylookup.Account.MakeBooking;
 import com.dude.funky.charitylookup.R;
 import com.dude.funky.charitylookup.View.ViewBooking.BookingView;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
@@ -88,13 +92,15 @@ public class Main_main extends AppCompatActivity {
 
             case R.id.logout:
 
+                FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(this, LoginActivity.class));
 
                 return true;
 
             case R.id.profile:
 
-                startActivity(new Intent(this, CharityLogin.class));
+                startActivity(new Intent(this, DonorProfile.class));
+
 
                 return true;
 
@@ -132,7 +138,7 @@ public class Main_main extends AppCompatActivity {
                 progressBar.setVisibility(View.GONE);
                 holder.textName.setText(model.getName());
 
-                holder.textTitle.setText(model.getUID());
+                holder.textTitle.setText(model.getLocation());
                 holder.textCompany.setText(model.getEmail());
                 //Glide.with(getApplicationContext())
                 //.load(model.getImage())

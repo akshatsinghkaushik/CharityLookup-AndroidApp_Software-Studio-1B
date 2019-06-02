@@ -7,15 +7,17 @@ public class FriendsResponse {
     private String uid;
     private String name;
     private String email;
+    private String location;
 
 
     public FriendsResponse() {
     }
 
-    public FriendsResponse(String uid,String name, String email) {
+    public FriendsResponse(String uid,String name, String email, String location) {
         this.uid = uid;
         this.name = name;
         this.email = email;
+        this.location = location;
 
     }
 
@@ -41,6 +43,14 @@ public class FriendsResponse {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location= location;
     }
 
     //public String getImage() {

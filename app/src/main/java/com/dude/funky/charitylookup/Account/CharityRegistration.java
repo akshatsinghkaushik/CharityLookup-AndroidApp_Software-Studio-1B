@@ -29,7 +29,7 @@ import java.util.Map;
 
 public class CharityRegistration extends AppCompatActivity {
 
-    private EditText inputEmail, inputPassword, inputName;
+    private EditText inputEmail, inputPassword, inputName, inputLocation;
     private Button btnSignIn, btnSignUp, btnResetPassword;
     private ProgressBar progressBar;
     private FirebaseAuth auth;
@@ -47,7 +47,9 @@ public class CharityRegistration extends AppCompatActivity {
         inputEmail = (EditText) findViewById(R.id.EmailSignUp);
         inputName = (EditText) findViewById(R.id.DisplayName);
         inputPassword = (EditText) findViewById(R.id.PasswordSignUp);
+        inputLocation = (EditText) findViewById(R.id.location);
         progressBar = (ProgressBar) findViewById(R.id.LoginProgressSignUp);
+
         //btnResetPassword = (Button) findViewById(R.id.ForgotPassSignIn);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -74,6 +76,7 @@ public class CharityRegistration extends AppCompatActivity {
                 String email = inputEmail.getText().toString().trim();
                 String name_charity = inputName.getText().toString().trim();
                 String password = inputPassword.getText().toString().trim();
+                String location = inputLocation.getText().toString().trim();
 
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
@@ -126,10 +129,11 @@ public class CharityRegistration extends AppCompatActivity {
                                     Map<String, Object> charity = new HashMap<>();
                                     charity.put("uid", token);
                                     charity.put("name", name_charity);
-                                    charity.put("email", email);
+                                    charity.put("email", email.toLowerCase());
+                                    charity.put("location",location);
 
                                     // Add a new document with email as document ID
-                                    db.collection("Charities").document(email)
+                                    db.collection("Charities").document(email.toLowerCase())
                                             .set(charity)
                                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                 @Override

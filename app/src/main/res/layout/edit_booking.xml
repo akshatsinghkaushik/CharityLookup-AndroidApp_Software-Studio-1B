@@ -56,14 +56,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
-                        android:text="Email"
+                        android:text="Item"
                         android:textAllCaps="true"
                         android:textColor="@color/white"
                         android:textSize="15sp" />
 
                     <EditText
                         android:layout_width="match_parent"
-                        android:id="@+id/EmailSignUp"
+                        android:id="@+id/item"
                         android:layout_height="40dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
@@ -73,12 +73,10 @@
                         android:paddingRight="15dp"
                         android:textColor= "@color/black"
                         android:textSize="15sp"
-                        android:hint="Email"
+                        android:hint="Item"
                         android:textCursorDrawable="@null"/>
 
                 </LinearLayout>
-
-
 
 
                 <LinearLayout
@@ -91,14 +89,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
-                        android:text="Display Name"
+                        android:text="Date"
                         android:textAllCaps="true"
                         android:textColor="@color/white"
                         android:textSize="15sp" />
 
                     <EditText
                         android:layout_width="match_parent"
-                        android:id="@+id/DisplayName"
+                        android:id="@+id/date"
                         android:layout_height="40dp"
                         android:layout_marginTop="5dp"
                         android:background="@drawable/edit_text_style"
@@ -107,7 +105,7 @@
                         android:paddingRight="15dp"
                         android:textColor= "@color/black"
                         android:textSize="15sp"
-                        android:hint="Enter Full Name"
+                        android:hint="Date"
                         android:textCursorDrawable="@null"/>
 
                 </LinearLayout>
@@ -122,40 +120,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
-                        android:text="Location"
-                        android:textAllCaps="true"
-                        android:textColor="@color/white"
-                        android:textSize="15sp" />
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:id="@+id/location"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:background="@drawable/edit_text_style"
-                        android:fontFamily="sans-serif-light"
-                        android:paddingLeft="15dp"
-                        android:paddingRight="15dp"
-                        android:textColor= "@color/black"
-                        android:textSize="15sp"
-                        android:hint="Location"
-                        android:textCursorDrawable="@null"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_marginLeft="5dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="sans-serif-light"
-                        android:text="Password"
+                        android:text="Time"
                         android:textAllCaps="true"
                         android:textColor="@color/white"
                         android:textSize="15sp" />
@@ -163,7 +128,7 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:id="@+id/PasswordSignUp"
+                        android:id="@+id/time"
                         android:layout_marginTop="5dp"
                         android:background="@drawable/edit_text_style"
                         android:fontFamily="sans-serif-light"
@@ -171,20 +136,20 @@
                         android:paddingRight="15dp"
                         android:textColor="@color/black"
                         android:textSize="15sp"
-                        android:hint="Password"
+                        android:hint="Time"
                         android:inputType="textPassword"
                         android:textCursorDrawable="@null"/>
 
                 </LinearLayout>
 
-
+                <!--
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:orientation="vertical">
 
-                    <!--<TextView
+                    <TextView
                         android:layout_marginLeft="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -192,7 +157,7 @@
                         android:text="Password"
                         android:textAllCaps="true"
                         android:textColor="@color/white"
-                        android:textSize="15sp" />-->
+                        android:textSize="15sp" />
 
                     <EditText
                         android:layout_width="match_parent"
@@ -208,21 +173,21 @@
                         android:inputType="textPassword"
                         android:textCursorDrawable="@null"/>
 
-                </LinearLayout>
+                </LinearLayout>-->
             </LinearLayout>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_below="@+id/line1"
-                android:id="@+id/SignUpSignUp"
+                android:id="@+id/save"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="50dp"
                 android:background="@drawable/bt_bg"
                 android:fontFamily="sans-serif-medium"
                 android:paddingLeft="30dp"
                 android:paddingRight="30dp"
-                android:text="Sign Up"
+                android:text="Save"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="16sp"
@@ -255,7 +220,7 @@
             android:layout_height="wrap_content"
             android:background="@color/transparent"
             android:fontFamily="sans-serif"
-            android:text="Sign Up"
+            android:text="Save"
             android:textAllCaps="true"
             android:textColor="@color/white" />
 
