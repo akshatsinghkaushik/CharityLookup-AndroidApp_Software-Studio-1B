@@ -4,16 +4,18 @@ import com.google.firebase.firestore.IgnoreExtraProperties;
 
 @IgnoreExtraProperties
 public class FriendsResponse {
+    private String uid;
     private String name;
-    private String title;
-    private String company;
-    private String image;
+    private String email;
+
 
     public FriendsResponse() {
     }
 
-    public FriendsResponse(String name) {
+    public FriendsResponse(String uid,String name, String email) {
+        this.uid = uid;
         this.name = name;
+        this.email = email;
 
     }
 
@@ -25,27 +27,27 @@ public class FriendsResponse {
         this.name = name;
     }
 
-    public String getTitle() {
-        return title;
+    public String getUID() {
+        return uid;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setUID(String uid) {
+        this.uid = uid;
     }
 
-    public String getCompany() {
-        return company;
+    public String getEmail() {
+        return email;
     }
 
-    public void setCompany(String company) {
-        this.company = company;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getImage() {
-        return image;
-    }
+    //public String getImage() {
+        //return image;
+    //}
 
-    public void setImage(String image) {
-        this.image = image;
-    }
+   // public void setImage(String image) {
+     //   this.image = image;
+    //}
 }

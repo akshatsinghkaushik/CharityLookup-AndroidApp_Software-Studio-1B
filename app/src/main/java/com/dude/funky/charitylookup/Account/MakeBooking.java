@@ -1,19 +1,5 @@
 package com.dude.funky.charitylookup.Account;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.dude.funky.charitylookup.MainActivity;
-import com.dude.funky.charitylookup.R;
-import com.dude.funky.charitylookup.Account.DateConversionMethods;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
-
-import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
@@ -31,6 +17,18 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.dude.funky.charitylookup.R;
+import com.dude.funky.charitylookup.View.Main_main;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Calendar;
 import java.util.HashMap;
@@ -62,6 +60,12 @@ public class MakeBooking extends AppCompatActivity {
         confirmBookingBtn = findViewById(R.id.confirm_booking_button);
         progressBar = findViewById(R.id.make_booking_progressbar);
 
+
+        Intent intent = getIntent();
+        String message = intent.getStringExtra("charity_name");
+        charityName.setText(message);
+
+
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseAuth auth = FirebaseAuth.getInstance();
         FirebaseUser user = auth.getCurrentUser();
@@ -77,7 +81,7 @@ public class MakeBooking extends AppCompatActivity {
 
                 DatePickerDialog dialog = new DatePickerDialog(
                         MakeBooking.this,
-                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        android.R.style.Theme_Material_Dialog_NoActionBar_MinWidth,
                         dateSetListener,
                         year, month, day);
 
@@ -104,10 +108,10 @@ public class MakeBooking extends AppCompatActivity {
             public void onClick(View v) {
                 TimePickerDialog dialog = new TimePickerDialog(
                         MakeBooking.this,
-                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        android.R.style.Theme_Material_Dialog_NoActionBar_MinWidth,
                         timeSetListener, 12, 00, false);
-                        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                        dialog.show();
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.show();
             }
         });
 
@@ -238,7 +242,7 @@ public class MakeBooking extends AppCompatActivity {
                                 }
                             });
 
-                    startActivity(new Intent(MakeBooking.this, MainActivity.class));
+                    startActivity(new Intent(MakeBooking.this, Main_main.class));
                     finish();
                 }
             }
