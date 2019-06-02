@@ -31,6 +31,10 @@
         <activity android:name=".View.Main_main">
 
         </activity>
+        <activity android:name=".Account.DonorProfile"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
         <activity android:name=".Account.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

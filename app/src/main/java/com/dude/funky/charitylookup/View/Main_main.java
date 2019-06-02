@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.dude.funky.charitylookup.Account.CharityLogin;
+import com.dude.funky.charitylookup.Account.DonorProfile;
 import com.dude.funky.charitylookup.Account.LoginActivity;
 import com.dude.funky.charitylookup.Account.MakeBooking;
 import com.dude.funky.charitylookup.R;
@@ -84,7 +85,7 @@ public class Main_main extends AppCompatActivity {
 
             case R.id.profile:
 
-                startActivity(new Intent(this, CharityLogin.class));
+                startActivity(new Intent(this, DonorProfile.class));
 
                 return true;
 
