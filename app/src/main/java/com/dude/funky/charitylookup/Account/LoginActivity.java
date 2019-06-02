@@ -179,7 +179,6 @@ public class LoginActivity extends AppCompatActivity {
         btnSignIn.setVisibility(GONE);
         btn_login.setVisibility(GONE);
         Intent signIntent = mGoogleSignInClient.getSignInIntent();
-        signIntent.putExtra("donor_email", auth.getCurrentUser().getEmail() );
         startActivityForResult(signIntent, GOOGLE_SIGN);
     }
 
