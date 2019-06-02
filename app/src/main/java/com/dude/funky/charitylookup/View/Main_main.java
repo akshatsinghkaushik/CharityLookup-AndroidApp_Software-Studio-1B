@@ -131,7 +131,10 @@ public class Main_main extends AppCompatActivity {
                 holder.itemView.setOnClickListener(v -> {
                     Snackbar.make(friendList, model.getName()+", "+model.getUID()+" at "+model.getEmail(), Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
-                        launchMakeBooking();
+
+
+                    launchMakeBooking(model.getName());
+
                 });
             }
 
@@ -155,8 +158,9 @@ public class Main_main extends AppCompatActivity {
 
     }
 
-    void launchMakeBooking(){
+    void launchMakeBooking(String tp){
         Intent intent = new Intent(Main_main.this, MakeBooking.class);
+        intent.putExtra("charity_name", tp );
         startActivity(intent);
     }
 

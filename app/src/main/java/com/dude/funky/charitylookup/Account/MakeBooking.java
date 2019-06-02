@@ -60,6 +60,12 @@ public class MakeBooking extends AppCompatActivity {
         confirmBookingBtn = findViewById(R.id.confirm_booking_button);
         progressBar = findViewById(R.id.make_booking_progressbar);
 
+
+        Intent intent = getIntent();
+        String message = intent.getStringExtra("charity_name");
+        charityName.setText(message);
+
+
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseAuth auth = FirebaseAuth.getInstance();
         FirebaseUser user = auth.getCurrentUser();
